@@ -29,7 +29,7 @@ FASTLED_USING_NAMESPACE
 CRGB leds[NUM_LEDS];
 
 #define MILLI_AMPS         1500
-#define BRIGHTNESS         32
+#define BRIGHTNESS         64
 #define FRAMES_PER_SECOND  60
 
 RotaryEncoder encoder(1, 0);
@@ -39,7 +39,7 @@ Button button = Button(10);
 #include "gradientPalettes.h"
 #include "map.h"
 
-bool isShowingDial = false;
+bool isShowingDial = true;
 
 bool startedTravelling = true;
 uint8_t travellingSpeed = 1;
@@ -135,7 +135,7 @@ void drawDial(uint8_t dialStartAngle, uint8_t dialEndAngle) {
   const CHSV dialColor = CHSV(dialHue, dialSaturation, dialValue);
 
   const uint8_t indicatorPulseBPM = 60;
-  const uint8_t indicatorHue = 160; // blue
+  const uint8_t indicatorHue = 144; // blue
   const uint8_t indicatorSaturation = 0; // completely desaturated (white)
   const uint8_t indicatorMinValue = 64;
   const uint8_t indicatorMaxValue = 255 - dialValue;
